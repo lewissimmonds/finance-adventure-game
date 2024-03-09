@@ -1,68 +1,53 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
-const stories = [
-  { id: 1, title: "Level 1", name: "Title of Story Here" },
-  { id: 2, title: "Level 2", name: "Title of Story Here" },
-  { id: 3, title: "Level 3", name: "Title of Story Here" },
-  { id: 4, title: "Level 4", name: "Title of Story Here" },
-  { id: 5, title: "Level 5", name: "Title of Story Here" },
-];
+import smallMoneyPile from "../assets/images/small_money_pile.png";
+import mediumMoneyPile from "../assets/images/medium_money_pile.png";
+import smallMoneyAndNotes from "../assets/images/small_money_notes_pile.png";
+import mediumMoneyAndNotes from "../assets/images/medium_money_notes_pile.png";
+import largeMoneyAndNotes from "../assets/images/large_money_notes_pile.png";
 
 const Hub = () => {
   const navigate = useNavigate();
-  const level = 5; // Dummy level for demonstration
 
   return (
-    <div>
-      <div style={styles.levelContainer}>
-        <span>Level: {level}</span>
+    <div style={styles.container}>
+      <div style={styles.rowContainer}>
+        {" "}
+        {/* Top Row */}
+        <img
+          src={smallMoneyPile}
+          alt="Small Money Pile"
+          style={styles.storyButton}
+          onClick={() => navigate(`/story/1`)}
+        />
+        <img
+          src={mediumMoneyPile}
+          alt="Medium Money Pile"
+          style={styles.storyButton}
+          onClick={() => navigate(`/story/2`)}
+        />
+        <img
+          src={smallMoneyAndNotes}
+          alt="Small Money and Notes Pile"
+          style={styles.storyButton}
+          onClick={() => navigate(`/story/3`)}
+        />
       </div>
       <div style={styles.rowContainer}>
         {" "}
-        {/* Top Row Container */}
-        {stories.slice(0, 3).map((story) => (
-          <button
-            key={story.id}
-            style={{
-              ...styles.storyButton,
-              background: level >= story.id ? "#4CAF50" : "#f44336",
-              opacity: level >= story.id ? "1" : "0.5",
-            }}
-            onClick={() => {
-              if (level >= story.id) navigate(`/story/${story.id}`);
-            }}
-            disabled={level < story.id}
-          >
-            <div>{story.title}</div>
-            <div>{story.name}</div>
-          </button>
-        ))}
-      </div>
-      <div style={styles.rowContainer}>
-        {" "}
-        {/* Bottom Row Container */}
-        {stories.slice(3).map(
-          (
-            story // Automatically includes the rest of the stories
-          ) => (
-            <button
-              key={story.id}
-              style={{
-                ...styles.storyButton,
-                background: level >= story.id ? "#4CAF50" : "#f44336",
-                opacity: level >= story.id ? "1" : "0.5",
-              }}
-              onClick={() => {
-                if (level >= story.id) navigate(`/story/${story.id}`);
-              }}
-              disabled={level < story.id}
-            >
-              <div>{story.title}</div>
-              <div>{story.name}</div>
-            </button>
-          )
-        )}
+        {/* Bottom Row */}
+        <img
+          src={mediumMoneyAndNotes}
+          alt="Medium Money and Notes Pile"
+          style={styles.storyButton}
+          onClick={() => navigate(`/story/4`)}
+        />
+        <img
+          src={largeMoneyAndNotes}
+          alt="Large Money and Notes Pile"
+          style={styles.storyButton}
+          onClick={() => navigate(`/story/5`)}
+        />
       </div>
     </div>
   );
@@ -70,10 +55,14 @@ const Hub = () => {
 
 // Define styles object
 const styles = {
-  levelContainer: {
-    display: "flex",
-    justifyContent: "flex-end",
-    marginRight: "20px",
+  container: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    textAlign: "center",
+    backgroundColor: "lightgreen",
   },
   rowContainer: {
     display: "flex",
@@ -83,8 +72,10 @@ const styles = {
   storyButton: {
     width: "10%", // Adjust based on your design needs
     padding: "50px",
-    margin: "100px",
     display: "flex",
+    marginTop: "100px",
+    marginLeft: "50px",
+    marginRight: "50px",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
