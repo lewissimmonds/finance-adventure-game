@@ -1,0 +1,11 @@
+[
+  {
+    "name": "keepCapital",
+    "question": "If you want to keep your capital over time, what should you do?",
+    "scenario": "A customer calls in frustrated because their new product isn't working as expected.",
+    "answers": [
+      "Leave it in your bank account",
+      "Risk investing it"
+    ]
+  }
+]

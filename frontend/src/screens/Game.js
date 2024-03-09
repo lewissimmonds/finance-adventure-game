@@ -1,6 +1,7 @@
 import React from "react";
 import QuestionBox from "../components/QuestionBox";
 import ScenarioBox from "../components/ScenarioBox";
+import data from "../scenarios.json";
 
 const GamePage = () => (
   <div>
