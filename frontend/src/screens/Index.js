@@ -33,6 +33,9 @@ const IndexPage = () => {
           <Link to="/hub" style={styles.button}>
             START GAME
           </Link>
+          <Link to="/about" style={{ ...styles.button, marginTop: "10px" }}>
+            ABOUT
+          </Link>
         </div>
       </div>
     </>
