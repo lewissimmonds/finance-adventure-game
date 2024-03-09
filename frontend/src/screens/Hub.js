@@ -2,11 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const stories = [
-  { id: 1, title: "Story 1", name: "Title of Story Here" },
-  { id: 2, title: "Story 2", name: "Title of Story Here" },
-  { id: 3, title: "Story 3", name: "Title of Story Here" },
-  { id: 4, title: "Story 4", name: "Title of Story Here" },
-  { id: 5, title: "Story 5", name: "Title of Story Here" },
+  { id: 1, title: "Level 1", name: "Title of Story Here" },
+  { id: 2, title: "Level 2", name: "Title of Story Here" },
+  { id: 3, title: "Level 3", name: "Title of Story Here" },
+  { id: 4, title: "Level 4", name: "Title of Story Here" },
+  { id: 5, title: "Level 5", name: "Title of Story Here" },
 ];
 
 const Hub = () => {
