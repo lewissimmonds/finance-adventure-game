@@ -22,11 +22,14 @@ const IndexPage = () => {
       </style>
       <div style={styles.container}>
         <div style={styles.headerBox}>
-          <h1 style={styles.header}>Quest for Capital!</h1>
+          <h1 style={styles.header}>Adventure Capitalist</h1>
         </div>
         <div style={styles.descriptionBox}>
           <p style={styles.description}>
-            EMBARK ON AN EXCITING JOURNEY TO BUILD YOUR CAPITAL!
+            EMBARK ON AN EXCITING JOURNEY TO BUILD YOUR CAPITAL! <br /> <br />
+            (this is not the other game that happens to be called adventure
+            capitalist, this is a game about investing in stocks and bonds and
+            stuff like that.)
           </p>
         </div>
         <div>
