@@ -39,7 +39,7 @@ const Hub = () => {
   const [currentDialogueIndex, setCurrentDialogueIndex] = useState(0);
   const [dialogueCompleted, setDialogueCompleted] = useState(false);
   const [level, setLevel] = useState(1);
-  const totalLevels = 10;
+  const totalLevels = 5;
 
   const advanceDialogueOrMove = () => {
     if (currentDialogueIndex < dialogue.length - 1) {
@@ -52,10 +52,11 @@ const Hub = () => {
   };
 
   const handleBack = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   useEffect(() => {
+    // Check for the first visit to control the tutorial visibility
     const hasVisited = localStorage.getItem("hasVisitedHub");
     if (hasVisited) {
       setDialogueCompleted(true);
@@ -65,17 +66,26 @@ const Hub = () => {
       setPageTransparent(true); // Start with the page being transparent for the tutorial
     }
 
+    // Retrieve the level from localStorage and update state
+    const savedLevel = localStorage.getItem("level");
+    if (savedLevel) {
+      setLevel(parseInt(savedLevel)); // Parse the saved level as a number and update the level state
+    }
+
     const timer = setTimeout(() => {
-      // Other initialization code if needed
+      // Place any other initialization code that needs to run after a delay here
     }, 500);
+
+    // Clean-up function to clear the timeout when the component unmounts or rerenders
     return () => clearTimeout(timer);
-  }, []);
+  }, []); // Dependency array is empty, so this effect runs once on mount
 
   const getImageStyle = (index) => ({
     ...styles.storyButton,
     transform: hoverIndex === index ? "scale(1.1)" : "scale(1)",
     transition: "transform 0.2s ease-in-out",
-    pointerEvents: dialogueCompleted ? "auto" : "none", // Enable clicking after dialogue
+    pointerEvents: dialogueCompleted && level >= index + 1 ? "auto" : "none", // Disable interaction for levels above the current one
+    opacity: level >= index + 1 ? 1 : 0.5, // Reduce opacity for levels above the current one
   });
 
   return (
@@ -124,7 +134,7 @@ const Hub = () => {
                     src={src}
                     alt={`Level ${index + 1} Icon`}
                     style={getImageStyle(index)}
-                    onClick={() => navigate(`/story/${index + 1}`)}
+                    onClick={() => navigate(`/test`)}
                   />
                 </div>
               )

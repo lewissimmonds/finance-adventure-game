@@ -8,7 +8,6 @@ import InflationCalc from "./screens/Inflation";
 import TestPage from "./screens/Test";
 import AboutPage from "./screens/About";
 
-
 function App() {
   return (
     <Router>
