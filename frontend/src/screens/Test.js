@@ -6,6 +6,7 @@ import { InflationCalc, DevelopingGraph, Investing, NatTool } from "./scripts";
 import CanvasJSReact from "@canvasjs/react-charts";
 import AdventureRequestFont from "../assets/fonts/AdventureRequest-j8W9.ttf";
 import { useNavigate } from "react-router-dom";
+import Background from "../assets/images/background.jpg";
 
 import "./style.css";
 
@@ -40,40 +41,46 @@ const TestPage = () => {
     container: {
       fontFamily: "'AllerDisplayStdRg', sans-serif",
       padding: "20px",
-      backgroundColor: "#F0EAD6",
+      backgroundColor: "#e6f4ea", // Light green background
       minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      justifyContent: "center",
       width: "100%",
+      backgroundImage: `url(${Background})`,
+      backgroundSize: "cover",
     },
     questionScenarioContainer: {
-      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      backgroundColor: "rgba(234, 255, 234, 0.9)", // Lighter green background
       borderRadius: "15px",
       padding: "20px",
-      maxWidth: "800px", // Max width for better readability on wider screens
-      boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+      maxWidth: "800px",
+      boxShadow: "0px 4px 8px rgba(0, 104, 56, 0.2)", // Green shadow
       textAlign: "center",
+      margin: "10px",
+      marginTop: "-50px",
     },
     question: {
-      color: "#003300",
+      color: "#006400", // Dark green
       fontFamily: "'AdventureRequest', cursive",
       fontSize: "24px",
       margin: "20px 0",
     },
     scenario: {
       fontSize: "18px",
+      color: "#2e8b57", // Sea green
       margin: "10px 0",
     },
     answers: {
-      backgroundColor: "#8c7853",
-      color: "#FFFFFF",
+      backgroundColor: "#32cd32", // Lime green
+      color: "#ffffff", // White text for better contrast
       padding: "10px 15px",
       margin: "10px",
-      width: "200px", // Uniform size for answer boxes
+      width: "200px",
       borderRadius: "10px",
       cursor: "pointer",
-      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+      boxShadow: "0 2px 4px rgba(0, 128, 0, 0.2)", // Green shadow
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -81,7 +88,7 @@ const TestPage = () => {
     graph: {
       width: "60vw",
       margin: "20px auto",
-      border: "1px solid #ddd",
+      border: "1px solid #98fb98", // Pale green
       borderRadius: "10px",
       overflow: "hidden",
     },
@@ -94,7 +101,6 @@ const TestPage = () => {
           style={{
             ...styles.answers,
             width: "fit-content",
-            marginBottom: "20px",
           }}
           onClick={handleBackClick}
         >
