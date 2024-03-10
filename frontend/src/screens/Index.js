@@ -12,6 +12,7 @@ const IndexPage = () => {
             font-family: 'AdventureRequest-j8W9';
             src: url(${AdventureRequestFont}) format('truetype');
           }
+          
         `}
       </style>
       <div style={styles.container}>
@@ -64,7 +65,7 @@ const styles = {
     cursor: "pointer",
     textDecoration: "none",
     marginTop: "200px", // Increase this value to add more space between the header and the button
-  },
+  }
 };
 
 export default IndexPage;

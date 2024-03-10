@@ -5,6 +5,7 @@ import HubPage from "./screens/Hub";
 import GamePage from "./screens/Game";
 import GraphPage from "./screens/Graph";
 import InflationCalc from "./screens/Inflation";
+import TestPage from "./screens/Test";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/game" element={<GamePage />} />
         <Route path="/graph" element={<GraphPage />} />
         <Route path="/inflation" element={<InflationCalc />} />
+        <Route path="/test" element={<TestPage />} />
       </Routes>
     </Router>
   );

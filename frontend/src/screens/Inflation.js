@@ -5,6 +5,7 @@ import data from "../scenarios.json";
 
 
 
+
 const InflationCalc = () => {
     const [years, setYears] = useState('');
     const [inflation, setInflation] = useState('');
