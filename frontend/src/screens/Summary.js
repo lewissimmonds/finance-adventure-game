@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import {NatTool } from "./scripts";
 
 const SummaryPage = () => {
   const navigate = useNavigate(); // Hook to navigate between routes
@@ -106,6 +107,10 @@ const SummaryPage = () => {
           Note: Always consult with a financial advisor before making investment
           decisions.
         </p>
+        </div>
+        <div style={styles.section}>
+        <h2 style={styles.subHeader}>Future capital calculator tool</h2>
+        <NatTool/>
       </div>
       <button onClick={handleBackToHub} style={styles.button}>
         Back to Hub

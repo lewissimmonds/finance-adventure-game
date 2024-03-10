@@ -161,7 +161,7 @@ const TestPage = () => {
       {currentDiv.script === true && (
         <div>
           {currentDiv.name === "inflationScript" && <InflationCalc />}
-          {currentDiv.name === "natTool" && <NatTool />}
+          {/* {currentDiv.name === "natTool" && <NatTool />} */}
         </div>
       )}
       {currentDiv.graph === true && (
