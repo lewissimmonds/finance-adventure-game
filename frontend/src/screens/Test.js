@@ -22,7 +22,7 @@ const TestPage = () => {
       console.log("End of scenarios reached");
       // Assuming the completion of all scenarios signifies the player moving to level 2
       localStorage.setItem("level", "2"); // Update the level in localStorage
-      navigate("/hub"); // Navigate the player to the hub
+      navigate("/summary"); // Navigate the player to the hub
 
       // Optionally, navigate the player to a new page or show a completion message
       // navigate('/completion-page') or set a state to show a completion message

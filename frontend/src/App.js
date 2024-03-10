@@ -7,6 +7,7 @@ import GraphPage from "./screens/Graph";
 import InflationCalc from "./screens/Inflation";
 import TestPage from "./screens/Test";
 import AboutPage from "./screens/About";
+import SummaryPage from "./screens/Summary";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/hub" element={<HubPage />} />
         <Route path="/game" element={<GamePage />} />
+        <Route path="/summary" element={<SummaryPage />} />
         <Route path="/graph" element={<GraphPage />} />
         <Route path="/inflation" element={<InflationCalc />} />
         <Route path="/test" element={<TestPage />} />
