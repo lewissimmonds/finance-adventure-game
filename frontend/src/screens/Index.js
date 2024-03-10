@@ -23,7 +23,7 @@ const IndexPage = () => {
       </style>
       <div style={styles.container}>
         <div style={styles.headerBox}>
-          <h1 style={styles.header}>Adventure Capitalist</h1>
+          <h1 style={styles.header}>Capitalist Adventure</h1>
         </div>
         <div style={styles.descriptionBox}>
           <p style={styles.description}>
