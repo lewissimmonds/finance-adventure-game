@@ -14,6 +14,7 @@ const IndexPage = () => {
             font-family: 'AdventureRequest-j8W9';
             src: url(${AdventureRequestFont}) format('truetype');
           }
+
           @font-face {
             font-family: 'AllerDisplayStdRg';
             src: url(${AllerDisplayStdRgFont}) format('truetype');
@@ -107,6 +108,7 @@ const styles = {
     borderRadius: "15px",
     cursor: "pointer",
     textDecoration: "none",
+
     marginTop: "200px", // Adjust as necessary for spacing from the description
     width: "30%",
     textShadow: "2px 2px 4px #000000",

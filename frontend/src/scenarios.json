@@ -1,11 +1,163 @@
 [
   {
-    "name": "keepCapital",
-    "question": "If you want to keep your capital over time, what should you do?",
-    "scenario": "A customer calls in frustrated because their new product isn't working as expected.",
-    "answers": [
-      "Leave it in your bank account",
-      "Risk investing it"
+      "type": "question",
+      "script":false,
+      "question":
+        "If you want to keep your capital overtime, what should you do ?",
+      "scenario": "Let's start with a simple one. A lot of people prefer to keep their money in their accounts, and not touch it in order not to worry about it. But is that the right thing to do ?",
+      "answers": [
+        "Leave it in your bank account",
+        "Risk investing it"
+      ]    
+  },
+  {
+    "type":"answer",
+    "script":true,
+    "name":"inflationScript",
+    "question": "",
+    "explanation": [
+      "Risk investing it !",
+      "Because of inflation, your money decreases in value overtime",
+      "With the tool below, you can calculate how much your money right now will be able to buy in the future : try it !"
     ]
+  },
+  {
+    "type":"question",
+    "question":"How much long term risk do you think the market overall has (the worst that can happen)?",
+    "scenario":"Most people think investing in gold or housing is the best option to make money; but is that true ?",
+    "answers":[
+      "Worst is that I don't lose any money.",
+      "I could lose all my money.",
+      "I could lose up to half of my money.",
+      "I will certainly gain in the long term."
+    ]
+  },
+  {
+    "type":"answer",
+    "explanation":[
+      "Anything can happen, but you might gain in the long term",
+      "Over 10 years :",
+      "Gold : 4.8%",
+      "Stock market (DowJones USA) : 8.87%",
+      "Stock market (Nifty50 India) : 12.47%",
+      "Stock Market fund Fidelity Magellan : 12.74%",
+      "Real estate : 8.15%",
+      "Not only does stock market yield higher returns in the long term, capital gains tax is lower on stocks as compared to the sale of real estate."
+    ]       
+  },
+  {
+    "type":"question",
+    "question":"How safe is investing ?",
+    "scenario":"How much do you think £100 could grow to, in the long term? By compounding just 15%? (Compounding is reinvesting the money you earned by investing previously)",
+    "answers":[
+      "4 times in 20 years = £400",
+      "3 times in 10 years = £300"
+    ]
+  },
+  {
+      "type":"answer",
+      "script":false,
+      "graph":true,
+      "name":"investingGraph",
+      "explanation": [
+        "It's better than you thought",
+        "5 years: £200 (double)",
+        "10 years: £400 (4 times)",
+        "15 years: £800 (8 times)",
+        "20 years: £1600 (16 times!!)",
+        "This is called compounding (percentage gain per year is called CAGR). Even growing by a small percentage every year, the capital keeps on accumulating resulting in very high returns over the long term period."
+      ]
+  },
+  {
+    "type":"question",
+    "question":"Bank deposits vs developing countries",
+    "scenario":"How much can you earn from investing your money in bank deposits compared to how much money you think can be earned by buying the stock of a bank in a fast growing developing economy?",
+    "answers":[
+      "Equal to investing in UK/ US bank stocks",
+      "Equal to return on deposits in UK/ US banks",
+      "Slightly more"
+    ]
+  },
+  {
+    "type":"answer",
+    "graph":true,
+    "name":"developingGraph",
+    "explanation":[
+      "Way more!",
+      "HDFC bank India- 16.41% return! (14.41% inflation adjusted, CAGR return in 10 years)",
+      "Fast growing stable economies have a lot of future potential so as to catch up to the developed economies and good growth prospects."
+    ]
+  },
+  {
+    "type":"question",
+    "question":"What would your money be if you invested in a long term growth oriented Mutual fund scheme, with the same risk as the overall market for the last 5 years?",
+    "scenario":"A Mutual fund is an investment fund made from contributions of multiple individuals, which is invested into stocks and other assets and managed by a firm (fund managers) for a fee.",
+    "answers":[
+      "As much as the market",
+      "Probably not much"
+    ]
+  },
+  {
+    "type":"answer",
+    "explanation":[
+      "Even better!!",
+      "You would have doubled your money at 15% per annum! On investment into Fidelity Magellan.",
+      "Investing through one of the best funds internationally can raise the odds of good returns."
+    ]
+  },
+  {
+    "type":"question",
+    "question":"How much do you think you would have lost, if you invested after every market crash historically?",
+    "answers":[
+      "All of my money?",
+      "Quite a lot of my money"
+    ]
+  },
+  {
+    "type":"answer",
+    "explanation":[
+      "You would lose nothing at all and gain much in the long term!📈",
+      "Constant upwards growth and constant downfall, both are temporary. Markets fluctuate in both directions, historically maintaining a long term upward trend since inception."
+    ]
+  },
+  {
+    "type":"question",
+    "question":"If you invested in bitcoin on July of 21, you would have doubled your money in just 4 months! What do you think the value of bitcoin was, over the year after that?",
+    "answers":[
+      "Maybe came down slightly",
+      "Stayed the same",
+      "Decreased a lot",
+      "Went further up"
+    ]
+  },
+  {
+    "type":"answer",
+    "script":true,
+    "explanation":[
+      "It plummeted!📉",
+      "It dropped to '-75%'!! If you invested 100 pounds, the value of your investment would come down to just 35 pounds!!",
+      "It's not always good to invest with the hype. Not doing proper research before investing can leave you hanging!",
+      "Here is a tool to calculate your future capital using interest rate"
+    ],
+    "name":"natTool"
+  },
+  {
+    "type":"question",
+    "question":"Which investment do you think performed the best overall?",
+    "answers":[
+      "Real estate and infrastructure obviously!",
+      "International equity market",
+      "I don't know about all the assets there are. I need to research."
+    ]
+  },
+  {
+    "type":"answer",
+    "explanation":[
+      "US equities !",
+      "Doing realistic market research and comparing facts can give directions towards how to diversify in best performing assets. Chinese assets gave '+54%' returns in 2017! But negative '-18%' returns the next year. Investing in only one asset can put you at high risk!",
+      "Chart from Blackrock:"
+    ],
+    "image":true,
+    "name":"assetReturns"
   }
 ]
