@@ -2,24 +2,27 @@ import React, { useState, useEffect }  from "react";
 import QuestionBox from "../components/QuestionBox";
 import ScenarioBox from "../components/ScenarioBox";
 import data from "../scenarios.json";
-import {InflationCalc, DevelopingGraph} from "./scripts";
+import {InflationCalc, DevelopingGraph, Investing, NatTool} from "./scripts";
 import CanvasJSReact from '@canvasjs/react-charts';
+import AdventureRequestFont from "../assets/fonts/AdventureRequest-j8W9.ttf";
+import "./style.css";
 
 const styles={
-    answers:{
+    /* answers:{
         backgroundColor:"#e5e5e5",
         borderRadius:"10px",
         display:'inline-block',
         cursor: 'pointer',
         margin:'10px',
-        padding:'5px',
-    },
+        paddingLeft: '10px',
+        paddingRight: '10px'
+    }, */
     answerContainer:{
         display:"flex",
     },
     graph:{
         width:"50vw",
-    }
+    }    
 }
 
 const TestPage = () => {
@@ -48,6 +51,9 @@ const TestPage = () => {
     
     return(
         <div>
+        {currentDivIndex!=0 &&
+            <div class="answers" onClick={handleBackClick}>Back</div>  
+        }
             
             {currentDiv.type == "question" &&
             <div>
@@ -55,10 +61,13 @@ const TestPage = () => {
                 <p>{currentDiv.scenario}</p>
                 <h3>Answers</h3>
                 <div style={styles.answerContainer}>
+                {/* <div style={styles.answers} onClick={handleNextClick}>
+                        <p key={index}>{answer}</p>
+                    </div> */}
                 {currentDiv.answers.map((answer, index) => (
                     <React.Fragment>
-                    <div style={styles.answers} onClick={handleNextClick}>
-                    <p key={index}>{answer}</p>
+                    <div class="answers" onClick={handleNextClick}>
+                        <p key={index}>{answer}</p>
                     </div>
                     <br />
                     </React.Fragment>
@@ -68,7 +77,8 @@ const TestPage = () => {
             }
             {currentDiv.type == "answer" &&
                 <div>
-                    {currentDiv.explanation.map((exp, index) => (
+                    <h1>{currentDiv.explanation[0]}</h1>
+                    {currentDiv.explanation.slice(1).map((exp, index) => (
                         <p>{exp}</p>
                     ))}
                 </div>            
@@ -80,6 +90,11 @@ const TestPage = () => {
                                 <InflationCalc />
                             </div>
                         )}
+                        {currentDiv.name == "natTool" &&(
+                            <div>
+                                <NatTool />
+                            </div>
+                        )}
                     </div>
             )}
             {currentDiv.graph == true &&
@@ -89,23 +104,25 @@ const TestPage = () => {
                                 <DevelopingGraph />
                             </div>
                     )}
+                    {currentDiv.name == "investingGraph" &&(
+                            <div style={styles.graph}>
+                                <Investing />
+                            </div>
+                    )}
                 </div>            
             }
             {currentDiv.image == true &&
                 <div>
                     {currentDiv.name == "assetReturns" &&(
-                        <div>
-                            <img src="https://github.com/lewissimmonds/finance-adventure-game/blob/ant-test/frontend/src/Blackrock_asset_returns.png"></img>
+                        <div style={styles.graph}>
+                            <img src="https://github.com/lewissimmonds/finance-adventure-game/blob/ant-test/frontend/src/Blackrock_asset_returns.png?raw=true"></img>
                         </div>
                     )}
                 </div>            
             }
-            {currentDivIndex!=0 &&
-                <button onClick={handleBackClick}>Back</button>  
-            }
             {currentDiv.type == "answer" &&
                 <div>
-                    <button onClick={handleNextClick}>Next</button> 
+                    <div class="answers" onClick={handleNextClick}>Next</div> 
                 </div>            
             }
             

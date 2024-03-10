@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'AdventureRequest';
+    /* src: url('../../src/assets/fonts/AdventureRequest-j8W9.ttf') format('ttf'); */
+    src:url("../../src/assets/fonts/AdventureRequest-j8W9.ttf");
+}
+
+h1, h2, h3{
+    font-family:"AdventureRequest";
+}
+
+p{
+    font-family: "Helvetica";
+}
+
+body{
+    padding: 15px;
+    background-color:#f5f5f5;
+}
+
+.answers{
+    background-color:#e5e5e5;
+    border-radius: 10px;
+    display:inline-block;
+    cursor: pointer;
+    margin:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.answers:hover{
+    background-color:#dfdfdf;
+}
+
+.answers:active{
+    background-color:#a7a7a7;
+}
