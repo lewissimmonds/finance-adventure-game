@@ -101,6 +101,8 @@ const TestPage = () => {
           style={{
             ...styles.answers,
             width: "fit-content",
+            position:"absolute",
+            top:"10px",
           }}
           onClick={handleBackClick}
         >
